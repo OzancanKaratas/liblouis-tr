@@ -39,11 +39,6 @@
 
 # Based on English UEB Grade 1 (included below)
 
-# Latin characters defined differently than in UEB table
-
-lowercase q 4-12345
-lowercase w 4-2456
-lowercase x 4-1346
 
 # Turkish characters
 
@@ -231,10 +226,10 @@ base uppercase \x0130 i		LATIN CAPITAL LETTER I WITH DOT/SMALL LETTER i
 punctuation " 56
 punctuation “ 236		LEFT DOUBLE QUOTATION MARK
 punctuation ” 356		RIGHT DOUBLE QUOTATION MARK
+punctuation ' 3
 punctuation ‘ 3		LEFT SINGLE QUOTATION MARK
 punctuation ’ 3		RIGHT SINGLE QUOTATİON MARK
 noback always \x25cc 6
-punctuation ' 3
 punctuation ; 23
 punctuation : 25
 prepunc ( 2356

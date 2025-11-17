@@ -1,11 +1,12 @@
-#-index-name: Turkish, contracted
-#-display-name: Turkish contracted braille
-#
+#-index-name: Turkish, computer
+#-display-name: Turkish computer braille
+
 #+language:tr
-#+type:literary
-#+contraction:full
-#+grade:2
+#+type:computer
 #+dots:8
+# Marked as "direction:both" by Bue Vester-Andersen
+# as it is a computer Braille table.
+#+direction:both
 
 # TODO: Please correct the metadata above. It is not meant to be
 # accurate nor complete. It hasn't been verified by the table
@@ -16,8 +17,6 @@
 # the implemented braille code. Preferably submit the documents
 # to https://github.com/liblouis/braille-specs.
 
-
 include tr.ctb
-include tr-g1.ctb
-include tr-g2.ctb
 include braille-patterns.cti
+include tr-g1.ctb

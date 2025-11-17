@@ -1,7 +1,8 @@
 #
 # Copyright (C) 1995-2008 by The BRLTTY Developers.
-# Copyright (C) 2023-2024 Oğuz Uğur <oguzugur2834@gmail.com>
+# Copyright (C) 2023-2025 Oğuz Uğur <oguzugur2834@gmail.com>
 # Copyright (C) 2024 Attila Hammer from IT Foundation for the Visually Impaired - Hungary <www.infoalap.hu>
+# Copyright (C) 2025 Ozancan Karataş <ozancankaratas96@outlook.com>
 #
 #  This file is part of liblouis.
 #
@@ -42,6 +43,8 @@
 # but these patterns are also used for contractions.
 #
 #  Copyright (C) 2018 SBS Schweizerische Bibliothek für Blinde, Seh- und Lesebehinderte
+# Some rules, code blocks, and dot patterns are adopted from other tables. For copyright information, please refer to the copyright            # sections of those tables. We appreciate the excellent work of their maintainers. The Utilized tables are listed below:
+# tr-g2.ctb, en-ueb-chardefs.uti, en-ueb-g1.ctb, en-ueb-g2.ctb, en-us-g1.ctb.
 #
 # Note from maintainer: in computer braille there are no contractions,
 # so what could be mixed up? Was this done to create consistency with
@@ -51,14 +54,13 @@
 
 space \s 0		SPACE
 punctuation ! 235		EXCLAMATION MARK
-punctuation " 2356		QUOTATION MARK
+punctuation " 56		QUOTATION MARK
 punctuation ' 3		APOSTROPHE
 punctuation ( 2356		LEFT PARENTHESIS
 punctuation ) 2356		RIGHT PARENTHESIS
 punctuation , 2		COMMA
 punctuation - 36		HYPHEN-MINUS
 punctuation . 256		FULL STOP
-include digits8Dots.uti
 punctuation : 25		COLON
 punctuation ; 23		SEMICOLON
 punctuation \x2026 256-256-256		ELLIPSIS
@@ -68,32 +70,6 @@ punctuation ‘ 3		LEFT SINGLE QUOTATION MARK
 punctuation ’ 3		RIGHT SINGLE QUOTATİON MARK
 punctuation ? 236		QUESTION MARK
 
-uppercase A 17		LATIN CAPITAL LETTER A
-uppercase B 127		LATIN CAPITAL LETTER B
-uppercase C 147		LATIN CAPITAL LETTER C
-uppercase D 1457		LATIN CAPITAL LETTER D
-uppercase E 157		LATIN CAPITAL LETTER E
-uppercase F 1247		LATIN CAPITAL LETTER F
-uppercase G 12457		LATIN CAPITAL LETTER G
-uppercase H 1257		LATIN CAPITAL LETTER H
-uppercase I 357		LATIN CAPITAL LETTER I
-uppercase J 2457		LATIN CAPITAL LETTER J
-uppercase K 137		LATIN CAPITAL LETTER K
-uppercase L 1237		LATIN CAPITAL LETTER L
-uppercase M 1347		LATIN CAPITAL LETTER M
-uppercase N 13457		LATIN CAPITAL LETTER N
-uppercase O 1357		LATIN CAPITAL LETTER O
-uppercase P 12347		LATIN CAPITAL LETTER P
-uppercase Q 123457		LATIN CAPITAL LETTER Q
-uppercase R 12357		LATIN CAPITAL LETTER R
-uppercase S 2347		LATIN CAPITAL LETTER S
-uppercase T 23457		LATIN CAPITAL LETTER T
-uppercase U 1367		LATIN CAPITAL LETTER U
-uppercase V 12367		LATIN CAPITAL LETTER V
-uppercase W 24567		LATIN CAPITAL LETTER W
-uppercase X 13467		LATIN CAPITAL LETTER X
-uppercase Y 134567		LATIN CAPITAL LETTER Y
-uppercase Z 13567		LATIN CAPITAL LETTER Z
 lowercase a 1		LATIN SMALL LETTER A
 lowercase b 12		LATIN SMALL LETTER B
 lowercase c 14		LATIN SMALL LETTER C
@@ -110,29 +86,93 @@ lowercase m 134		LATIN SMALL LETTER M
 lowercase n 1345		LATIN SMALL LETTER N
 lowercase o 135		LATIN SMALL LETTER O
 lowercase p 1234		LATIN SMALL LETTER P
-lowercase q 12345		LATIN SMALL LETTER Q
+lowercase q 4-12345		LATIN SMALL LETTER Q
 lowercase r 1235		LATIN SMALL LETTER R
 lowercase s 234		LATIN SMALL LETTER S
 lowercase t 2345		LATIN SMALL LETTER T
 lowercase u 136		LATIN SMALL LETTER U
 lowercase v 1236		LATIN SMALL LETTER V
-lowercase w 2456		LATIN SMALL LETTER W
-lowercase x 1346		LATIN SMALL LETTER X
+lowercase w 4-2456		LATIN SMALL LETTER W
+lowercase x 4-1346		LATIN SMALL LETTER X
 lowercase y 13456		LATIN SMALL LETTER Y
 lowercase z 1356		LATIN SMALL LETTER Z
+uppercase A 1		LATIN CAPITAL LETTER A
+uppercase B 12		LATIN CAPITAL LETTER B
+uppercase C 14		LATIN CAPITAL LETTER C
+uppercase D 145		LATIN CAPITAL LETTER D
+uppercase E 15		LATIN CAPITAL LETTER E
+uppercase F 124		LATIN CAPITAL LETTER F
+uppercase G 1245		LATIN CAPITAL LETTER G
+uppercase H 125		LATIN CAPITAL LETTER H
+uppercase İ 24		LATIN CAPITAL LETTER İ
+uppercase J 245		LATIN CAPITAL LETTER J
+uppercase K 13		LATIN CAPITAL LETTER K
+uppercase L 123		LATIN CAPITAL LETTER L
+uppercase M 134		LATIN CAPITAL LETTER M
+uppercase N 1345		LATIN CAPITAL LETTER N
+uppercase O 135		LATIN CAPITAL LETTER O
+uppercase P 1234		LATIN CAPITAL LETTER P
+uppercase Q 4-12345		LATIN CAPITAL LETTER Q
+uppercase R 1235		LATIN CAPITAL LETTER R
+uppercase S 234		LATIN CAPITAL LETTER S
+uppercase T 2345		LATIN CAPITAL LETTER T
+uppercase U 136		LATIN CAPITAL LETTER U
+uppercase V 1236		LATIN CAPITAL LETTER V
+uppercase W 4-2456		LATIN CAPITAL LETTER W
+uppercase X 4-1346		LATIN CAPITAL LETTER X
+uppercase Y 13456		LATIN CAPITAL LETTER Y
+uppercase Z 1356		LATIN CAPITAL LETTER Z
 punctuation \x00a0 0		NO-BREAK SPACE
-uppercase \x00c7 167		LATIN CAPITAL LETTER C WITH CEDILLA
-uppercase \x00d6 2467		LATIN CAPITAL LETTER O WITH DIAERESIS
-uppercase \x00dc 12567		LATIN CAPITAL LETTER U WITH DIAERESIS
 lowercase \x00e7 16		LATIN SMALL LETTER C WITH CEDILLA
 lowercase \x00f6 246		LATIN SMALL LETTER O WITH DIAERESIS
 lowercase \x00fc 1256		LATIN SMALL LETTER U WITH DIAERESIS
-uppercase \x011e 1267		LATIN CAPITAL LETTER G WITH BREVE
+uppercase \x00c7 16		LATIN CAPITAL LETTER C WITH CEDILLA
+uppercase \x00d6 246		LATIN CAPITAL LETTER O WITH DIAERESIS
+uppercase \x00dc 1256		LATIN CAPITAL LETTER U WITH DIAERESIS
 lowercase \x011f 126		LATIN SMALL LETTER G WITH BREVE
-uppercase \x0130 247		LATIN CAPITAL LETTER I WITH DOT ABOVE
 lowercase \x0131 35		LATIN SMALL LETTER DOTLESS I
-uppercase \x015e 1467		LATIN CAPITAL LETTER S WITH CEDILLA
+base uppercase I \x0131		LATIN CAPITAL LETTER I/SMALL LETTER DOTLESS I
+base uppercase \x0130 i		LATIN CAPITAL LETTER I WITH DOT/SMALL LETTER i
+uppercase \x0130 24		LATIN CAPITAL LETTER I WITH DOT ABOVE
 lowercase \x015f 146		LATIN SMALL LETTER S WITH CEDILLA
+uppercase \x015e 146		LATIN CAPITAL LETTER S WITH CEDILLA
+
+
+# Numsign and Letter Sign Markers
+letsign 56
+numsign 3456  number sign, just a dots operand
+numericmodechars .,
+numericnocontchars abcdefghijABCDEFGHIJ
+
+# A capital ends numeric mode, so clean up extraneous letter indicators between a number
+# and a subsequent capital letter
+noback pass2 _$D[@6-56]$U @6                # handle "1234Card"
+noback pass2 _$D[@6-6-56]$U @6-6            # handle "1234CARD"
+noback pass2 _$D[@256-6-6-56]$U @256-6-6    # handle "1234.CARD"
+noback pass2 _$D[@256-6-56]$U @256-6        # handle "1234.Card"
+
+# Correct order of comma and numeric indicator
+match %a , %# 2-34569  force correct position of numeric indicator
+noback pass2 @3456-2-34569 @2-3456    Clear up extra indicator after the match line
+
+# Correct order of dot and numeric indicator
+match %a . %# 256-34569  force correct position of numeric indicator
+noback pass2 @3456-256-34569 @256-3456    Clear up extra indicator after the match line
+
+# numeric space
+noback correct _$d["\x00a0"]$d     "\xE020"   # change space to custom symbol representing numeric space
+nofor  correct _$d["\xE020"]$d "\x00a0"
+litdigit \xE020 5a                        # add virtual dot to make distinction with other uses of dot 5
+noback pass2   @5a             @5
+nofor  pass2   [@3456]$D       @3456#1=1  # enter numeric mode when number sign followed by digit is encountered
+nofor  pass2   $D              *
+nofor  pass2   #1=1[@5]$D      @5a        # when in numeric mode interpret dot 5 as numeric space
+nofor  pass2   $a              *#1=0      # exit numeric mode when other character than digit or numeric space is encountered
+
+capsletter 6
+begcapsword 6-6
+multind 56-6 nocontractsign capsletter
+
 
 # Accented letters
 
@@ -321,3 +361,54 @@ base uppercase        \x1E80 \x1E81      Ẁẁ  &#7808;&#7809; LATIN LETTER W W
 base uppercase        \x1E82 \x1E83      Ẃẃ  &#7810;&#7811; LATIN LETTER W WITH ACUTE
 base uppercase        \x1E84 \x1E85      Ẅẅ  &#7812;&#7813; LATIN LETTER W WITH DIAERESIS
 base uppercase        \x1EF2 \x1EF3      Ỳỳ  &#7922;&#7923; LATIN LETTER Y WITH GRAVE
+
+# These letters and punctuation symbols at below are added to provide presenting of some Arabic/Persian origined words which are extensively # used in old Ottoman Turkish writings to transcript into Latin Turkish alphabet. These are especially used in TDV Islamic Encyclopedia
+# and also in some literary works focused on old Turkish literary extensively.
+
+lowercase \x1E0D 4-145 ḍ &#7693; LATIN SMALL LETTER D WITH DOT BELOW
+lowercase \x0121 4-1245 ġ &#297; LATIN SMALL LETTER G WITH DOT ABOVE
+lowercase \x1E25 4-125 ḥ &#7717; LATIN SMALL LETTER H WITH DOT BELOW
+lowercase \x1E2B 4-125 ḫ &#7723; LATIN SMALL LETTER H WITH BREVE BELOW
+lowercase \x1E33 4-13 ḳ &#7731; LATIN SMALL LETTER K WITH DOT BELOW
+lowercase \x1E63 4-234 ṣ &#7779; LATIN SMALL LETTER S WITH DOT BELOW
+lowercase \x1E6D 4-2345 ṭ &#7789; LATIN SMALL LETTER T WITH DOT BELOW
+lowercase \x1E95 4-1356 ẕ &#7829; LATIN SMALL LETTER Z WITH LINE BELOW
+lowercase \x1E93 4-1356 ẓ &#7827; LATIN SMALL LETTER Z WITH DOT BELOW
+lowercase \x1E63 4-234 ṣ &#7779; LATIN SMALL LETTER S WITH DOT BELOW
+
+base uppercase        \x1E0C \x1E0D      Ḍḍ  &#7692;&#7693; LATIN LETTER D WITH DOT BELOW
+base uppercase        \x0120 \x0121      Ġġ  &#296;&#297;   LATIN LETTER G WITH DOT ABOVE
+base uppercase        \x1E24 \x1E25      Ḥḥ  &#7716;&#7717; LATIN LETTER H WITH DOT BELOW
+base uppercase        \x1E2A \x1E2B      Ḫḫ  &#7722;&#7723; LATIN LETTER H WITH BREVE BELOW
+base uppercase        \x1E32 \x1E33      Ḳḳ  &#7730;&#7731; LATIN LETTER K WITH DOT BELOW
+base uppercase        \x1E62 \x1E63      Ṣṣ  &#7778;&#7779; LATIN LETTER S WITH DOT BELOW
+base uppercase        \x1E6C \x1E6D      Ṭṭ  &#7788;&#7789; LATIN LETTER T WITH DOT BELOW
+base uppercase        \x1E94 \x1E95      Ẕẕ  &#7828;&#7829; LATIN LETTER Z WITH LINE BELOW
+base uppercase        \x1E92 \x1E93      Ẓẓ  &#7826;&#7827; LATIN LETTER Z WITH DOT BELOW
+base uppercase        \x1E62 \x1E63      Ṣṣ  &#7778;&#7779; LATIN LETTER S WITH DOT BELOW
+
+punctuation \x02BE 3 ʾ &#702; MODIFIER LETTER RIGHT HALF RING
+punctuation \x02BF 3 ʿ &#703; MODIFIER LETTER LEFT HALF RING
+
+# macro below accent
+sign \x0331 4   ̱
+noback correct [$l]"̱" "̱"*
+word \x0331 456
+
+
+
+# Eight-Dot digits were added to provide correct presentation of some punctuation symbols with  numsign together. Essentially, currently, # there isn't any official support for eight-dot-braille by Turkish braille system.
+
+digit 0 2458
+digit 1 18
+digit 2 128
+digit 3 148
+digit 4 1458
+digit 5 158
+digit 6 1248
+digit 7 12458
+digit 8 1258
+digit 9 248
+
+include litdigits6Dots.uti
+include braille-patterns.cti

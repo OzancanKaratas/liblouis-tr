@@ -42,9 +42,11 @@
 #
 #  Copyright (C) 2018 SBS Schweizerische Bibliothek für Blinde, Seh- und Lesebehinderte
 
+include braille-patterns.cti
+include tr.ctb
+include tr-g1.ctb
 include litdigits6Dots.uti
 
-include braille-patterns.cti
 
 # Aralık Ayarlamaları
 space \s 0		SPACE
@@ -155,6 +157,38 @@ base uppercase Ö ö
 base uppercase Ş ş
 base uppercase Ü ü
 
+# Karakter Belirteçleri
+numsign 3456
+letsign 56
+#noletsignafter .
+#noletsignafter '
+capsletter 6
+begcapsword 6-6
+endcapsword 6-3
+numericnocontchars abcdefghij
+
+emphclass italic
+emphclass underline
+emphclass bold
+
+begemphphrase italic 46-46
+endemphphrase italic before 46
+lenemphphrase italic 4
+begemphword italic 46-3
+endemphword italic 46-36
+emphletter italic 46-25
+
+begemphphrase bold 456-456
+#lastwordboldbefore 456
+lenemphphrase bold 4
+#begcomp 456-346
+# endcomp 456-156
+
+nofor pass2 [@3456]$d @3456#1=1        
+nofor pass2 #1=1$d *                   
+nofor pass2 #1=1[@5]$d @5a             
+nofor pass2 #1=1 *#1=0                 
+
 # Genel Semboller
 sign . 4-256
 sign ¦ 123456
@@ -164,16 +198,15 @@ sign ¨ 2456
 sign ° 12345
 sign · 156
 sign ~ 45
-sign # 3456
+noback sign # 3456
 sign \\ 4-34
 sign \\ 4
-sign | 6
+noback sign | 6
 sign / 34
 sign + 56-26
 sign % 13456
 sign = 56-2356
 sign ^ 5
-sign @ 4
 sign & 12346
 sign \x00A3 4 £
 sign $ 2346
@@ -200,43 +233,30 @@ decpoint , 2 Decimal comma
 decpoint . 256
 decpoint : 25
 
-# Karakter Belirteçleri
-numsign 3456
-letsign 56
-#noletsignafter .
-#noletsignafter '
-capsletter 6
-begcapsword 6-6
-endcapsword 6-3
+# literary digits:
 
-emphclass italic
-emphclass underline
-emphclass bold
-
-begemphphrase italic 46-46
-endemphphrase italic before 46
-lenemphphrase italic 4
-begemphword italic 46-3
-endemphword italic 46-36
-emphletter italic 46-25
-
-begemphphrase bold 456-456
-#lastwordboldbefore 456
-lenemphphrase bold 4
-#begcomp 456-346
-# endcomp 456-156
+litdigit 0 245
+litdigit 1 1
+litdigit 2 12
+litdigit 3 14
+litdigit 4 145
+litdigit 5 15
+litdigit 6 124
+litdigit 7 1245
+litdigit 8 125
+litdigit 9 24
 
 # Rakkamlar
-digit 0 2457
-digit 1 17
-digit 2 127
-digit 3 147
-digit 4 1457
-digit 5 157
-digit 6 1247
-digit 7 12457
-digit 8 1257
-digit 9 247
+digit 0 2458
+digit 1 18
+digit 2 128
+digit 3 148
+digit 4 1458
+digit 5 158
+digit 6 1248
+digit 7 12458
+digit 8 1258
+digit 9 248
 
 # multind 56-6 letsign capsign
 
@@ -427,13 +447,38 @@ base uppercase        \x1E82 \x1E83      Ẃẃ  &#7810;&#7811; LATIN LETTER W W
 base uppercase        \x1E84 \x1E85      Ẅẅ  &#7812;&#7813; LATIN LETTER W WITH DIAERESIS
 base uppercase        \x1EF2 \x1EF3      Ỳỳ  &#7922;&#7923; LATIN LETTER Y WITH GRAVE
 
-# Correct order of comma and numeric indicator
-match %. , %# 2-3456
-noback pass2 @3456-2-3456 @2-3456
+# These letters and punctuation symbols at below are added to provide presenting of some Arabic/Persian origined words which are extensively # used in old Ottoman Turkish writings to transcript into Latin Turkish alphabet. These are especially used in TDV Islamic Encyclopedia
+# and also in some literary works focused on old Turkish literary extensively.
 
-# Correct order of dot and numeric indicator
-match %. . %# 256-3456
-noback pass2 @3456-256-3456 @256-3456
+lowercase \x1E0D 4-145 ḍ &#7693; LATIN SMALL LETTER D WITH DOT BELOW
+lowercase \x0121 4-1245 ġ &#297; LATIN SMALL LETTER G WITH DOT ABOVE
+lowercase \x1E25 4-125 ḥ &#7717; LATIN SMALL LETTER H WITH DOT BELOW
+lowercase \x1E2B 4-125 ḫ &#7723; LATIN SMALL LETTER H WITH BREVE BELOW
+lowercase \x1E33 4-13 ḳ &#7731; LATIN SMALL LETTER K WITH DOT BELOW
+lowercase \x1E63 4-234 ṣ &#7779; LATIN SMALL LETTER S WITH DOT BELOW
+lowercase \x1E6D 4-2345 ṭ &#7789; LATIN SMALL LETTER T WITH DOT BELOW
+lowercase \x1E95 4-1356 ẕ &#7829; LATIN SMALL LETTER Z WITH LINE BELOW
+lowercase \x1E93 4-1356 ẓ &#7827; LATIN SMALL LETTER Z WITH DOT BELOW
+lowercase \x1E63 4-234 ṣ &#7779; LATIN SMALL LETTER S WITH DOT BELOW
+
+base uppercase        \x1E0C \x1E0D      Ḍḍ  &#7692;&#7693; LATIN LETTER D WITH DOT BELOW
+base uppercase        \x0120 \x0121      Ġġ  &#296;&#297;   LATIN LETTER G WITH DOT ABOVE
+base uppercase        \x1E24 \x1E25      Ḥḥ  &#7716;&#7717; LATIN LETTER H WITH DOT BELOW
+base uppercase        \x1E2A \x1E2B      Ḫḫ  &#7722;&#7723; LATIN LETTER H WITH BREVE BELOW
+base uppercase        \x1E32 \x1E33      Ḳḳ  &#7730;&#7731; LATIN LETTER K WITH DOT BELOW
+base uppercase        \x1E62 \x1E63      Ṣṣ  &#7778;&#7779; LATIN LETTER S WITH DOT BELOW
+base uppercase        \x1E6C \x1E6D      Ṭṭ  &#7788;&#7789; LATIN LETTER T WITH DOT BELOW
+base uppercase        \x1E94 \x1E95      Ẕẕ  &#7828;&#7829; LATIN LETTER Z WITH LINE BELOW
+base uppercase        \x1E92 \x1E93      Ẓẓ  &#7826;&#7827; LATIN LETTER Z WITH DOT BELOW
+base uppercase        \x1E62 \x1E63      Ṣṣ  &#7778;&#7779; LATIN LETTER S WITH DOT BELOW
+
+punctuation \x02BE 3 ʾ &#702; MODIFIER LETTER RIGHT HALF RING
+punctuation \x02BF 3 ʿ &#703; MODIFIER LETTER LEFT HALF RING
+
+# macro below accent
+sign \x0331 4   ̱
+noback correct [$l]"̱" "̱"*
+word \x0331 456
 
 # Ki word part related exceptions
 always kia 13-24-1
@@ -502,10 +547,38 @@ begmidword ha 25
 begmidword ha' 25-3
 begmidword ka 256
 begmidword ka' 256-3
-endword ki 3456
-always ki 3456
-noback begword ki 3456
+always kiç 3456-16
+always kiı 3456-35
+always kik 3456-13
+always kila 3456-123456
+always kile 3456-346
+always kil 3456-123
+always kim 3456-134
+always kina 3456-1346
+always kine 3456-12345
+always kin 3456-1345
+always kio 3456-135
+always kiö 3456-246
+always kip 3456-1234
+always kir 3456-1235
+always kisa 3456-156
+always kise 3456-345
+always kis 3456-234
+always kiş 3456-146
+always kita 3456-23456
+always kite 3456-12456
+always kit 3456-2345
+always kiu 3456-136
+always kiü 3456-1256
+always kive 3456-26
+always kiv 3456-1236
+always kiya 3456-1246
+always kiye 3456-12356
+always kiy 3456-13456
+always kiz 3456-1356
 word ki 3456
+sufword Ki 6-3456
+endword ki 3456
 always la 123456
 always le 346
 always ma 34
@@ -533,7 +606,11 @@ sufword bazı 12-1356
 sufword cumhuriyet 14-134
 sufword cisim 14-234
 sufword cevap 14-1236
+sufword cevaba 14-1236-1
+sufword cevabı 14-1236-35
 sufword çocuk 16-14
+sufword çocuğa 16-14-1
+sufword çocuğu 16-14-136
 sufword çoğu 16-126
 sufword çalışkan 16-123
 sufword çünkü 16-1345
@@ -558,8 +635,14 @@ sufword örneğin 1235-1345
 sufword arası 1235-234
 sufword orta 1235-2345
 sufword sebep 234-12
+sufword sebebe 234-12-15
+sufword sebebi 234-12-24
 sufword sıcak 234-14
+sufword sıcağa 234-14-1
+sufword sıcağı 234-14-35
 sufword soğuk 234-126
+sufword soğuğa 234-126-1
+sufword soğuğu 234-126-136
 sufword eski 234-13
 sufword osmanlı 234-134
 sufword soru 234-1235
@@ -577,25 +660,31 @@ sufword haber 125-12
 sufword hiç 125-16
 sufword halk 125-123
 sufword hemen 125-134
-always hangi 125-1345
+sufword hangi 125-1345
 sufword hepsi 125-1234
 sufword hayat 125-13456
 sufword hazır 125-1356
 sufword kabul 13-12
 sufword küçük 13-16
+sufword küçüğe 13-16-15
+sufword küçüğü 13-16-1256
 sufword kadın 13-145
 sufword kahraman 13-125
 sufword kolay 13-123
 sufword kendi 13-1345
 sufword kısım 13-234
 sufword kitap 13-2345
+sufword kitabı 13-2345-35
+sufword kitaba 13-2345-1
 sufword kuvvet 13-1236
 sufword kuzey 13-1356
 sufword lazım 123-1356
 sufword işte 146-2345
 sufword şöyle 146-13456
-sufword tabiyat 2345-12
+sufword tabiat 2345-12
 sufword toprak 2345-1234
+sufword toprağa 2345-1234-1
+sufword toprağı 2345-1234-35
 sufword vatan 1236-2345
 sufword aydın 13456-145
 sufword yukarı 13456-13
@@ -667,50 +756,64 @@ begword yok 13456-3
 begword zaman 1356-3
 
 # Kelime Kökü fiil Kısaltmaları
-always  bil 5-12
+sufword bil 5-12
 sufword incele 5-14
+sufword inceliyor 5-14-56-135
 sufword çalış 5-16
-always dur 5-145
+sufword dur 5-145
 sufword eğit 5-15
 sufword faydalan 5-124
-always gel 5-1245
+sufword gel 5-1245
 sufword öğren 5-126
 sufword harca 5-125
-always kır 5-35
+sufword harcıyor 5-125-56-135
+sufword kır 5-35
 sufword iste 5-24
+sufword istiyor 5-24-56-135
 sufword kullan 5-13
 sufword alış 5-123
 sufword tamamla 5-134
+sufword tamamlıyor 5-134-56-135
 sufword anla 5-1345
-always sor 5-135
+sufword anlıyor 5-1345-56-135
+sufword sor 5-135
 sufword gör 5-246
 sufword topla 5-1234
+sufword topluyor 5-1234-56-135
 sufword bırak 5-1235
 sufword söyle 5-234
+sufword söylüyor 5-234-56-135
 sufword başla 5-146
-always tut 5-2345
+sufword başlıyor 5-146-56-135
+sufword tut 5-2345
 sufword uğra 5-136
+sufword uğruyor 5-136-56-135
 sufword yürü 5-1256
-begword vur 5-1236
+sufword vur 5-1236
 sufword yetiş 5-13456
 sufword gözle 5-1356
-begmidword bekle 5-356
+sufword gözlüyor 5-1356-56-135
+sufword bekle 5-356
+sufword bekliyor 5-356-56-135
 sufword yüksel 5-1456
 sufword düşün 5-12346
 sufword koy 5-3456
 sufword öğret 5-346
-begword oku 5-1346
+sufword oku 5-1346
 sufword yerleş 5-156
 sufword getir 5-23456
 sufword yaşa 5-1246
+sufword yaşıyor 5-1246-56-135
 sufword bulun 5-235
-always koş 5-2346
-always geç 5-2456
-begmidword kalk 5-256-3
+sufword koş 5-2346
+sufword geç 5-2456
+sufword kalk 5-256-3
 sufword konuş 5-123456
 sufword oyna 5-34
+sufword oynuyor 5-34-56-135
 sufword göster 5-12345
-always yara 5-345
+sufword yara 5-345
+sufword yarıyor 5-345-56-135
 sufword götür 5-12456
 sufword büyü 5-12356
 
@@ -861,3 +964,4 @@ begword klo 13-123-135
 begword bra 12-1235-1
 begword bre 12-1235-15
 begword kbps 13-12-1234-234
+

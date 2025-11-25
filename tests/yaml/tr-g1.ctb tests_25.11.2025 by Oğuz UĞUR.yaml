@@ -1,0 +1,131 @@
+# Turkish Braille Tests for tr-g1.ctb
+# Created: 2025-11-25
+
+display: unicode.dis
+table: tr-g1.ctb
+flags: {testmode: bothDirections}
+
+# Tests for letter corrections exclusively focused on ıI and iİ which are made in tr.ctb
+# Tests were made in other tables to provide consistency
+
+tests:
+  - - "Iğdır'a gittim."
+    - ⠠⠔⠣⠙⠔⠗⠄⠰⠁⠀⠛⠊⠞⠞⠊⠍⠲
+
+  - - "Ilık havada çıktık."
+    - ⠠⠔⠇⠔⠅⠀⠓⠁⠧⠁⠙⠁⠀⠡⠔⠅⠞⠔⠅⠲
+
+flags: {testmode: forward}
+
+# Corrections for dot and comma with numsign
+# These tests must be made for only forward mode
+
+tests:
+  - - "no.3 No.3"
+    - ⠝⠕⠲⠼⠉⠀⠠⠝⠕⠲⠼⠉
+  
+  - - "no,3 No,3"
+    - ⠝⠕⠂⠼⠉⠀⠠⠝⠕⠂⠼⠉
+
+# TDV Transcription Letters
+# These tests must be made for only forward mode
+
+tests:
+  - - "Ḍ"
+    - ⠰⠠⠈⠙
+  
+  - - "ḍ"
+    - ⠰⠈⠙
+  
+  - - "Ḍḍ"
+    - ⠠⠈⠙⠈⠙
+  
+  - - "Ġ"
+    - ⠰⠠⠈⠛
+  
+  - - "ġ"
+    - ⠰⠈⠛
+  
+  - - "Ġġ"
+    - ⠠⠈⠛⠈⠛
+  
+  - - "Ḥ"
+    - ⠰⠠⠈⠓
+  
+  - - "ḥ"
+    - ⠰⠈⠓
+  
+  - - "Ḥḥ"
+    - ⠠⠈⠓⠈⠓
+  
+  - - "Ḫ"
+    - ⠰⠠⠈⠓
+  
+  - - "ḫ"
+    - ⠰⠈⠓
+  
+  - - "Ḫḫ"
+    - ⠠⠈⠓⠈⠓
+  
+  - - "Ḳ"
+    - ⠰⠠⠈⠅
+  
+  - - "ḳ"
+    - ⠰⠈⠅
+  
+  - - "Ḳḳ"
+    - ⠠⠈⠅⠈⠅
+  
+  - - "Ṣ"
+    - ⠰⠠⠈⠎
+  
+  - - "ṣ"
+    - ⠰⠈⠎
+  
+  - - "Ṣṣ"
+    - ⠠⠈⠎⠈⠎
+  
+  - - "Ṭ"
+    - ⠰⠠⠈⠞
+  
+  - - "ṭ"
+    - ⠰⠈⠞
+  
+  - - "Ṭṭ"
+    - ⠠⠈⠞⠈⠞
+  
+  - - "Ẕ"
+    - ⠰⠠⠈⠵
+  
+  - - "ẕ"
+    - ⠰⠈⠵
+  
+  - - "Ẕẕ"
+    - ⠠⠈⠵⠈⠵
+  
+  - - "Ẓ"
+    - ⠰⠠⠈⠵
+  
+  - - "ẓ"
+    - ⠰⠈⠵
+  
+  - - "Ẓẓ"
+    - ⠠⠈⠵⠈⠵
+  
+  - - "ʾ"
+    - ⠄
+  
+  - - "ʿ"
+    - ⠄
+  
+  - - "s̱"
+    - ⠈⠰⠎
+  
+  - - "S̱"
+    - ⠈⠰⠠⠎
+  
+  - - "s̱S̱"
+    - ⠈⠰⠎⠈⠰⠠⠎
+  
+  - - "ḥadîṣi"
+    - ⠈⠓⠁⠙⠈⠊⠈⠎⠊

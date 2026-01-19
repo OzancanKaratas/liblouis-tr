@@ -1,0 +1,104 @@
+# Turkish Braille Tests for tr-g2.ctb
+# Created: 2026-01-19
+
+display: unicode.dis
+table: tr-g2.ctb
+
+flags: {testmode: bothDirections}
+
+# These tests exclusively focused on abbreviation of "ki" and numsign. These corrections aim to resolve interfere between abbreviation 
+# "ki" 
+# and numsign because both of them use same dot pattern which is 3456. This test should focused on detection of "ki" and numsign
+# differences. If the test detects the ki and numsign as required, then other failures should be ignored.
+
+# kiç
+tests:
+  - - "Çekiç kullanıyor, çekiç sesinden uyuyamadık."
+    - ⠠⠡⠑⠼⠡⠀⠐⠅⠔⠰⠕⠂⠀⠡⠑⠼⠡⠀⠜⠰⠮⠺⠝⠀⠥⠽⠥⠫⠌⠙⠔⠅⠲
+  
+# kiı
+tests:
+  - - "Defterde kiı yazıyor, yanlış yazılmış."
+    - ⠠⠺⠋⠻⠗⠺⠀⠼⠔⠀⠫⠵⠔⠰⠕⠂⠀⠫⠝⠇⠔⠩⠀⠫⠵⠔⠇⠰⠩⠲
+
+# kik
+tests:
+  - - "Bu, akik taşı olabilir."
+    - ⠠⠆⠂⠀⠁⠼⠅⠀⠾⠩⠔⠀⠕⠿⠃⠊⠇⠊⠗⠲
+
+# kil
+tests:
+  - - "Gece kapıyı kilitledi."
+    - ⠠⠛⠉⠀⠲⠏⠔⠽⠔⠀⠼⠇⠊⠞⠬⠯⠲
+
+# kim
+tests:
+  - - "Misafirler kimler gelecek?"
+    - ⠠⠍⠊⠱⠋⠊⠗⠬⠗⠀⠼⠍⠬⠗⠀⠐⠛⠑⠘⠻⠦
+
+# kin
+tests:
+  - - "Sınavdan önce sakin ol."
+    - ⠠⠎⠔⠭⠧⠹⠝⠀⠪⠝⠉⠑⠀⠱⠼⠝⠀⠕⠇⠲
+
+# kio
+tests:
+  - - "Bu cihazlara kiosk deniyor."
+    - ⠠⠆⠀⠉⠊⠒⠵⠘⠑⠀⠼⠕⠎⠅⠀⠺⠝⠊⠰⠕⠲
+
+# kiö
+tests:
+  - - "Türkçede “kiö” şeklinde bir heceyi doğal biçimde içeren standart bir kelime yoktur."
+    - ⠠⠞⠳⠗⠅⠡⠑⠺⠀⠦⠼⠪⠴⠀⠩⠑⠅⠇⠊⠝⠺⠀⠮⠀⠓⠑⠉⠑⠽⠊⠀⠙⠕⠣⠁⠇⠀⠃⠊⠡⠊⠍⠺⠀⠊⠡⠑⠗⠑⠝⠀⠎⠾⠝⠹⠗⠞⠀⠮⠀⠅⠑⠇⠊⠍⠑⠀⠽⠄⠘⠚⠲
+
+# kip
+tests:
+  - - "Tabelaları takip edin."
+    - ⠠⠾⠴⠿⠰⠑⠀⠾⠼⠏⠀⠑⠯⠝⠲
+
+# kir
+tests:
+  - - "Sokak kedilerinin çoğu tekir kedilerdir."
+    - ⠠⠎⠕⠲⠅⠀⠅⠑⠯⠰⠑⠰⠝⠀⠡⠣⠀⠻⠼⠗⠀⠅⠑⠯⠬⠗⠰⠚⠲
+
+# kis
+tests:
+  - - "İkide birde barutla infilak akisleri geliyordu. - Yahya Kemal Beyatlı"
+    - ⠠⠊⠅⠊⠙⠑⠀⠮⠺⠀⠖⠗⠥⠞⠿⠀⠊⠝⠋⠊⠿⠅⠀⠁⠼⠎⠰⠑⠀⠐⠛⠊⠰⠕⠙⠥⠲⠀⠤⠀⠠⠫⠓⠫⠀⠠⠅⠑⠌⠇⠀⠠⠴⠫⠞⠇⠔
+
+# kiş
+tests:
+  - - "Kaç kişi gelecek?"
+    - ⠠⠲⠡⠀⠼⠩⠊⠀⠐⠛⠑⠘⠻⠦
+
+# kit
+tests:
+  - - "Nazmiye Hanım hülyaları içinde sakit, uysal ve gevşek adımlarla yürüyordu. - Peyami Safa"
+    - ⠠⠭⠵⠍⠊⠷⠀⠠⠒⠝⠔⠍⠀⠓⠳⠇⠫⠰⠑⠀⠊⠄⠺⠀⠱⠼⠞⠂⠀⠥⠽⠱⠇⠀⠢⠀⠛⠑⠧⠩⠑⠅⠀⠁⠙⠔⠍⠿⠗⠿⠀⠐⠳⠰⠕⠙⠥⠲⠀⠤⠀⠠⠏⠑⠫⠍⠊⠀⠠⠱⠋⠁
+
+# kiu, kiü
+tests:
+  - - "Türkçe’de “kiu” ve “kiü” heceleri doğal olarak bulunmaz."
+    - ⠠⠞⠳⠗⠅⠡⠑⠄⠺⠀⠦⠼⠥⠴⠀⠢⠀⠦⠼⠳⠴⠀⠓⠑⠉⠑⠰⠑⠀⠙⠕⠣⠁⠇⠀⠕⠘⠑⠅⠀⠐⠖⠌⠵⠲
+
+# kiv
+tests:
+  - - "Meyvelerden kivi, lezzetli bir meyvedir."
+    - ⠠⠍⠑⠽⠢⠬⠗⠺⠝⠀⠼⠧⠊⠂⠀⠬⠵⠵⠑⠞⠇⠊⠀⠮⠀⠍⠑⠽⠢⠰⠚⠲
+
+# kiy
+tests:
+  - - "Ekmeği ikiye böldü."
+    - ⠠⠑⠅⠍⠑⠣⠊⠀⠊⠼⠷⠀⠃⠪⠇⠙⠳⠲
+
+# kiz
+tests:
+  - - "Rıza boş arsaları, ikiz pembe villaları, havuzlu bahçeyi geçti. - Haldun Taner"
+    - ⠠⠗⠔⠵⠁⠀⠃⠕⠩⠀⠁⠗⠱⠰⠑⠂⠀⠊⠼⠵⠀⠏⠑⠍⠃⠑⠀⠧⠊⠇⠿⠰⠑⠂⠀⠒⠧⠥⠵⠇⠥⠀⠖⠓⠡⠑⠽⠊⠀⠐⠺⠞⠊⠲⠀⠤⠀⠠⠒⠇⠙⠥⠝⠀⠠⠾⠟⠗
+
+# Numbers and Letters:
+tests:
+  - - "1a 2b 3c 4d 5e 6f 7g 8h 9i 0j"
+    - ⠼⠁⠰⠁⠀⠼⠃⠰⠃⠀⠼⠉⠰⠉⠀⠼⠙⠰⠙⠀⠼⠑⠰⠑⠀⠼⠋⠰⠋⠀⠼⠛⠰⠛⠀⠼⠓⠰⠓⠀⠼⠊⠰⠊⠀⠼⠚⠰⠚
+  - - "a1 b2 c3 d4 e5 f6 g7 h8 i9 j0"
+    - ⠰⠁⠼⠁⠀⠰⠃⠼⠃⠀⠰⠉⠼⠉⠀⠰⠙⠼⠙⠀⠰⠑⠼⠑⠀⠰⠋⠼⠋⠀⠰⠛⠼⠛⠀⠰⠓⠼⠓⠀⠰⠊⠼⠊⠀⠰⠚⠼⠚
